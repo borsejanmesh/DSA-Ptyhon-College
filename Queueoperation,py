@@ -1,0 +1,79 @@
+Max_size = 5 
+queue = [] 
+
+def enqueue(): 
+    if len(queue) == Max_size: 
+        print("Queue Overflow, Queue is full") 
+        return 
+    element = int(input("enter element to insert :")) 
+    queue.append(element) 
+    print(element, "inserted successfully") 
+
+def dequeue(): 
+    if len(queue) == 0: 
+        print("Queue Underflow, Queue is Empty") 
+        return 
+    element = queue.pop(0) 
+    print(element, "deleted successfully") 
+
+def peek(): 
+    if len(queue) == 0: 
+        print("Queue is Empty") 
+        return 
+    print("Front element is", queue[0]) 
+
+def isEmpty(): 
+    if len(queue) == 0: 
+        print("Queue is Empty") 
+    else: 
+        print("Queue is NOT Empty") 
+
+def isFull(): 
+    if len(queue) == Max_size: 
+        print("Queue is Full") 
+    else: 
+        print("Queue is NOT Full") 
+
+def size(): 
+    print("Queue size:", len(queue)) 
+
+def display(): 
+    if len(queue) == 0: 
+        print("Queue is Empty") 
+        return 
+    print("Queue Elements (Front to Rear):")
+    for element in queue:
+        print(element, end=" <- ")
+    print("End")
+
+while True: 
+    print("\n--- Queue Operation ---") 
+    print("1. Enqueue") 
+    print("2. Dequeue") 
+    print("3. Peek") 
+    print("4. IsEmpty") 
+    print("5. IsFull") 
+    print("6. Size") 
+    print("7. Display") 
+    print("8. Exit") 
+    choice = input("Choose an Operation: ") 
+    
+    if choice == "1": 
+        enqueue() 
+    elif choice == "2": 
+        dequeue() 
+    elif choice == "3": 
+        peek() 
+    elif choice == "4": 
+        isEmpty() 
+    elif choice == "5": 
+        isFull() 
+    elif choice == "6": 
+        size() 
+    elif choice == "7": 
+        display() 
+    elif choice == "8": 
+        print("Program terminated") 
+        break  # Fixed: Added break to successfully exit the while loop
+    else: 
+        print("Please enter a valid choice")
